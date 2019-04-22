@@ -1,0 +1,7 @@
+[% IF show_pdf %]
+  <embed src="/pdf" width="550" height="600" id="show_pdf">
+[% ELSE %]
+   <div class="alert alert-info" role="alert">
+  <p> nof file uploaded yet</p>
+  </div>
+[% END %]

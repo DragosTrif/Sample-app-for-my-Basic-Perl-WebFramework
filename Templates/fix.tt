@@ -1,0 +1,73 @@
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>input</th>
+    <th>text input</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="vehicle1" id='chk_1' value="1"></td>
+    <td><input type="text" value='1' id='txt_1' name="fname"></td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="vehicle1" value="2" id='chk_2'></td>
+    <td><input type="text" value='2' id='txt_2' name="fname"></td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="vehicle1" value="3" id='chk_3'></td>
+    <td><input type="text" value='3' id='txt_3' name="fname"></td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="vehicle1" id='chk_4' value="4" ></td>
+    <td><input type="text" value='4' id='txt_4' name="fname"></td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="vehicle1" value="5" id='chk_5'></td>
+    <td><input type="text" value='5' id='txt_5' name="fname"></td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="vehicle1" value="6" id='chk_6'></td>
+    <td><input type="text" value='6' id='txt_6' name="fname"></td>
+    <td>Italy</td>
+  </tr>
+</table>
+<p>
+  <input type="text" value='0' id='total' name="fname">
+</p>
+<script>
+  $('input:checkbox').change(function ()
+{
+      var total = 0;
+      $('input:checkbox:checked').each(function(){ // iterate through each checked element.
+        total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+      });     
+      $("#total").val(total);
+
+});
+
+</script>
